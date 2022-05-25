@@ -1,0 +1,150 @@
+-- This gui is fake. It does nothing. Its only purpose is for a fake da hood script showcase.
+-- Here are how to set up the fake commands:
+-- For Anti-Ban, it is simple. The notification speaks for itself.
+-- For Steal Cash, hide some cash nearby and use cash aura to pick it up once you click Steal Cash.
+-- For Full God, activate godmode using a different gui beforehand, then click Full God.
+-- For Instant Crash, turn off your wifi and quickly click Instant Crash so youll get kicked ou game.
+-- For Freeze, use a fake lag/hitbox script to make other player(s) look stuck in place.
+-- Also, you can use the target thingy to make it look like your commands effect a player.
+
+-- Instances:
+
+local ScreenGui = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local TitleLabel = Instance.new("TextLabel")
+local TextBox = Instance.new("TextBox")
+local TargetLabel = Instance.new("TextLabel")
+local StealCash = Instance.new("TextButton")
+local FullGod = Instance.new("TextButton")
+local Freeze = Instance.new("TextButton")
+local InstantCrash = Instance.new("TextButton")
+local AntiBan = Instance.new("TextButton")
+
+--Properties:
+
+ScreenGui.Parent = game.CoreGui
+
+Main.Name = "Main"
+Main.Parent = ScreenGui
+Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Main.BackgroundTransparency = 0.100
+Main.BorderSizePixel = 0
+Main.Position = UDim2.new(0.201689541, 0, 0.227692306, 0)
+Main.Size = UDim2.new(0, 160, 0, 201)
+Main.Active = true
+Main.Draggable = true
+
+TitleLabel.Name = "TitleLabel"
+TitleLabel.Parent = Main
+TitleLabel.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TitleLabel.BorderSizePixel = 0
+TitleLabel.Size = UDim2.new(0, 160, 0, 24)
+TitleLabel.Font = Enum.Font.Ubuntu
+TitleLabel.Text = "Da Hood Admin UI"
+TitleLabel.TextColor3 = Color3.fromRGB(251, 251, 251)
+TitleLabel.TextSize = 18.000
+
+TextBox.Parent = Main
+TextBox.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+TextBox.BorderSizePixel = 0
+TextBox.Position = UDim2.new(0.387499988, 0, 0.893773019, 0)
+TextBox.Size = UDim2.new(0, 89, 0, 18)
+TextBox.Font = Enum.Font.Ubuntu
+TextBox.Text = ""
+TextBox.TextColor3 = Color3.fromRGB(251, 251, 251)
+TextBox.TextSize = 17.000
+
+TargetLabel.Name = "TargetLabel"
+TargetLabel.Parent = Main
+TargetLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TargetLabel.BackgroundTransparency = 1.000
+TargetLabel.BorderSizePixel = 0
+TargetLabel.Position = UDim2.new(0, 0, 0.89377296, 0)
+TargetLabel.Size = UDim2.new(0, 62, 0, 18)
+TargetLabel.Font = Enum.Font.Ubuntu
+TargetLabel.Text = "Target:"
+TargetLabel.TextColor3 = Color3.fromRGB(251, 251, 251)
+TargetLabel.TextSize = 16.000
+
+StealCash.Name = "StealCash"
+StealCash.Parent = Main
+StealCash.BackgroundColor3 = Color3.fromRGB(252, 8, 26)
+StealCash.BorderSizePixel = 0
+StealCash.Position = UDim2.new(0.0623310097, 0, 0.289237052, 0)
+StealCash.Size = UDim2.new(0, 142, 0, 24)
+StealCash.Font = Enum.Font.Ubuntu
+StealCash.Text = "Steal Cash"
+StealCash.TextColor3 = Color3.fromRGB(251, 251, 251)
+StealCash.TextSize = 19.000
+StealCash.MouseButton1Down:connect(function()
+	wait(0.55)
+	game.StarterGui:SetCore(
+		"SendNotification",
+		{
+			Title = "Cash Stealer",
+			Text = "Stole 7,000 cash from 'h6qy'"
+		}
+	)
+end)
+
+FullGod.Name = "FullGod"
+FullGod.Parent = Main
+FullGod.BackgroundColor3 = Color3.fromRGB(252, 8, 26)
+FullGod.BorderSizePixel = 0
+FullGod.Position = UDim2.new(0.061999999, 0, 0.432999998, 0)
+FullGod.Size = UDim2.new(0, 142, 0, 24)
+FullGod.Font = Enum.Font.Ubuntu
+FullGod.Text = "Full God"
+FullGod.TextColor3 = Color3.fromRGB(251, 251, 251)
+FullGod.TextSize = 19.000
+FullGod.MouseButton1Down:connect(function()
+	game.StarterGui:SetCore(
+		"SendNotification",
+		{
+			Title = "Godmode",
+			Text = "Godmode activated."
+		}
+	)
+end)
+
+Freeze.Name = "Freeze"
+Freeze.Parent = Main
+Freeze.BackgroundColor3 = Color3.fromRGB(252, 8, 26)
+Freeze.BorderSizePixel = 0
+Freeze.Position = UDim2.new(0.061999999, 0, 0.720000029, 0)
+Freeze.Size = UDim2.new(0, 142, 0, 24)
+Freeze.Font = Enum.Font.Ubuntu
+Freeze.Text = "Freeze"
+Freeze.TextColor3 = Color3.fromRGB(251, 251, 251)
+Freeze.TextSize = 19.000
+
+InstantCrash.Name = "InstantCrash"
+InstantCrash.Parent = Main
+InstantCrash.BackgroundColor3 = Color3.fromRGB(252, 8, 26)
+InstantCrash.BorderSizePixel = 0
+InstantCrash.Position = UDim2.new(0.061999999, 0, 0.575999975, 0)
+InstantCrash.Size = UDim2.new(0, 142, 0, 24)
+InstantCrash.Font = Enum.Font.Ubuntu
+InstantCrash.Text = "Instant Crash"
+InstantCrash.TextColor3 = Color3.fromRGB(251, 251, 251)
+InstantCrash.TextSize = 19.000
+
+AntiBan.Name = "AntiBan"
+AntiBan.Parent = Main
+AntiBan.BackgroundColor3 = Color3.fromRGB(252, 8, 26)
+AntiBan.BorderSizePixel = 0
+AntiBan.Position = UDim2.new(0.0623310097, 0, 0.145696387, 0)
+AntiBan.Size = UDim2.new(0, 142, 0, 24)
+AntiBan.Font = Enum.Font.Ubuntu
+AntiBan.Text = "Anti-Ban"
+AntiBan.TextColor3 = Color3.fromRGB(251, 251, 251)
+AntiBan.TextSize = 19.000
+AntiBan.MouseButton1Down:connect(function()
+	game.StarterGui:SetCore(
+		"SendNotification",
+		{
+			Title = "Anti-Ban Activated",
+			Text = "You are now immune to being banned or kicked!"
+		}
+	)
+end)
